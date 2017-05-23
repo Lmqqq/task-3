@@ -1,0 +1,16 @@
+#include<stdio.h>         
+int main()
+{
+    int fun(int n);        //fun函数声明
+    int n;
+    printf("请输入n: ");
+    scanf("%d",&n);
+    printf("n的阶乘是：%d\n",fun(n));
+    return 0;
+}
+int fun(int n)     
+{
+    if(n<0)  printf("n<0，请重新输入");   //n<0时报错
+    else if(n==0||n==1) return 1;       //n=0或1时，n!=1
+    else return n*fun(n-1);             //n>1时，求n!
+}
